@@ -1,4 +1,4 @@
-# update blob to storage for ADX ingest
+# this is bif sample code for update blob to Azure storage for ADX ingest
 import io;
 import datetime;
 import time;
