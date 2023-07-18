@@ -10,12 +10,12 @@ import pytz;
 import asyncio;
 from azure.storage.blob.aio import BlobClient;
 
-
-connectsring="your connection string";
-container=ContainerClient.from_container_url(connectsring);
-blob_client =container.get_blob_client('folder/filename');
-
-blob_metadata = {'kustoTable': 'yourtablename', 'kustoDataFormat':'yourdatatype(json/mutijson/csv/..)','kustoIngestionMappingReference':'yourmappingname','kustoDatabase':'yourdatabasename','rawSizeBytes':'filesize(b)'}
-    with open("filename", "rb") as data:
-         blob_client.upload_blob(data)
-         blob_client.set_blob_metadata(metadata=blob_metadata)
+def upload_to_blob_for_adxingest(connectionstring,filename,tablename,fileformat,yourdatatype,yourmapping,databasename,filesize):
+    connectsring="your connection string";
+    container=ContainerClient.from_container_url(connectsring);
+    blob_client =container.get_blob_client('folder/filename');
+    
+    blob_metadata = {'kustoTable': tablename, 'kustoDataFormat':fileformat,'kustoIngestionMappingReference':'yourmapping','kustoDatabase':'databasename,'rawSizeBytes':filesize}
+        with open("filename", "rb") as data:
+             blob_client.upload_blob(data)
+             blob_client.set_blob_metadata(metadata=blob_metadata)
