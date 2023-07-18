@@ -1,4 +1,4 @@
-"""query azure data explorer data by cluster,db,query,appid,appkey """ 
+"""query azure data explorer data  """ 
 
 def ADXquery(cluster,db,query,appid,appkey):
   kustoOptions = {"kustoCluster":cluster, "kustoDatabase" :db, "kustoAadAppId":appid ,
