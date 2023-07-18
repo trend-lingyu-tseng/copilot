@@ -1,4 +1,4 @@
-###  slog_ubtaudit join PII sample
+// slog_ubtaudit join PII sample
 
 slog_ubtaudit
 | where isnotempty(['user'])
