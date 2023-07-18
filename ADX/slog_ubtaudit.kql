@@ -1,0 +1,8 @@
+###  slog_ubtaudit join PII sample
+
+slog_ubtaudit
+| where isnotempty(['user'])
+| take 100
+| join kind=leftouter (slog_ubtaudit_pii | where column=='user') 
+on sLogSite,$left.['user']==$right.key
+| project user,value,sLogSite
