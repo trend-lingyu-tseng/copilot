@@ -1,7 +1,7 @@
-#query bif adx data
+"""query azure data explorer data by cluster,db,query,appid,appkey """ 
 
 def ADXquery(cluster,db,query,appid,appkey):
-  kustoOptions = {"kustoCluster":"private-dataview.westus2", "kustoDatabase" : "VisionOne_Report", "kustoAadAppId":appid ,
+  kustoOptions = {"kustoCluster":cluster, "kustoDatabase" :db, "kustoAadAppId":appid ,
  "kustoAadAppSecret":dbutils.secrets.get(scope = "adx-connect", key = appkey), "kustoAadAuthorityID":"trendid"}
   KQLstring=query
   df  = pyKusto.read. \
