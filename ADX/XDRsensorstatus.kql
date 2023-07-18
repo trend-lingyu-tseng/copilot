@@ -1,0 +1,8 @@
+// How go extract XDR sensor status after policy mode
+
+xdr_endopoint_agent_daily_snapshot_view
+| where etl_date >= datetime("2021-11-20")
+//| where company_id == "company_id" // policy company
+//| where xdr_device_id == "xdr_device_id" // policy company with enable xdr
+//| where company_id == "company_id" // toggle company
+| take 100
