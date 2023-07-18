@@ -1,4 +1,4 @@
-#this is sample for query adx data
+#query bif adx data
 
 def ADXquery(cluster,db,query,appid,appkey):
   kustoOptions = {"kustoCluster":"private-dataview.westus2", "kustoDatabase" : "VisionOne_Report", "kustoAadAppId":appid ,
